@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Deploys the web_static contents to the web servers"""
+"""Deploys the archive to the web servers"""
 from fabric.api import *
 from datetime import datetime
 from os import path
@@ -11,7 +11,7 @@ env.key_filename = '~/.ssh/school'
 
 
 def do_deploy(archive_path):
-        """Deploys the web_static files to the web servers"""
+        """Deploys the archive file to the web servers"""
         try:
                 if not (path.exists(archive_path)):
                         return False
