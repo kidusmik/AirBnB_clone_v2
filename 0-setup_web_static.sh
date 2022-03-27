@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # Sets up a web server for deployment of web_static.
 
-sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get -y update
 sudo apt-get install -y nginx
 
 sudo mkdir -p /data/web_static/releases/test/
 sudo mkdir -p /data/web_static/shared/
-echo "Holberton School" > /data/web_static/releases/test/index.html
+printf "<html>\n\t<head>\n\t</head>\n\t<body>\n\t\tHolberton School\n\t</body>\n</html>" > /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 
 sudo chown -R ubuntu /data/
