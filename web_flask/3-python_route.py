@@ -27,7 +27,7 @@ def c_is_fun(text):
 
 
 @app.route('/python/')
-@app.route('/python/(<text>)')
+@app.route('/python/<text>')
 def python_is_cool(text='is cool'):
     """Returns Python followed by the text for the route /python/(<text>"""
     return 'Python %s' % text.replace('_', ' ')
